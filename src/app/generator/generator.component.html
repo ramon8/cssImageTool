@@ -1,0 +1,56 @@
+<div class="container-target">
+  <div #target id="target"></div>
+</div>
+<div class="container-form">
+  <div>
+    <input type="button" value="render" (click)="generate()">
+    <input type="button" value="new shape" (click)="newShape()">
+  </div>
+
+  <div>
+    <label>CanvasWidth</label>
+    <input [(ngModel)]="canvasWidth" type="number" (ngModelChange)="resizeCanvas()">
+    <input [(ngModel)]="canvasWidth" type="range" (ngModelChange)="resizeCanvas()" [max]="350">
+  </div>
+  <div>
+    <label>CanvasHeight</label>
+    <input [(ngModel)]="canvasHeight" type="number" (ngModelChange)="resizeCanvas()">
+    <input [(ngModel)]="canvasHeight" type="range" (ngModelChange)="resizeCanvas()" [max]="350">
+  </div>
+
+  <div>
+    <label>Width</label>
+    <input [(ngModel)]="shapes[shapes.length - 1].width" type="number" (ngModelChange)="generate()">
+    <input [(ngModel)]="shapes[shapes.length - 1].width" type="range" (ngModelChange)="generate()" [max]="canvasWidth">
+  </div>
+  <div>
+    <label>Height</label>
+    <input [(ngModel)]="shapes[shapes.length - 1].height" type="number" (ngModelChange)="generate()">
+    <input [(ngModel)]="shapes[shapes.length - 1].height" type="range" (ngModelChange)="generate()"
+      [max]="canvasHeight">
+  </div>
+  <div>
+    <label>Color</label>
+    <input [(ngModel)]="shapes[shapes.length - 1].color" type="color" (ngModelChange)="generate()">
+  </div>
+  <div>
+    <label>x</label>
+    <input [(ngModel)]="shapes[shapes.length - 1].x" type="number" (ngModelChange)="generate()">
+    <input [(ngModel)]="shapes[shapes.length - 1].x" type="range" (ngModelChange)="generate()" [max]="canvasWidth">
+  </div>
+  <div>
+    <label>y</label>
+    <input [(ngModel)]="shapes[shapes.length - 1].y" type="number" (ngModelChange)="generate()">
+    <input [(ngModel)]="shapes[shapes.length - 1].y" type="range" (ngModelChange)="generate()" [max]="canvasHeight">
+  </div>
+  <div>
+    <label>Type</label>
+    <input [(ngModel)]="shapes[shapes.length - 1].type" type="text" (ngModelChange)="generate()">
+  </div>
+
+  <div>
+    <label>{{shapes.type}}</label>
+    <input [(ngModel)]="shapes[shapes.length - 1].typeSize" type="number" (ngModelChange)="generate()">
+    <input [(ngModel)]="shapes[shapes.length - 1].typeSize" type="range" (ngModelChange)="generate()" [max]="canvasHeight">
+  </div>
+</div>
